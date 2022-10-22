@@ -1,9 +1,10 @@
 name: Deploy para o vercel
 on:
 	push:
-		workflow_dispatch
 		branches:
 			- master
+	workflow_dispatch:
+
 jobs:
 	Deploy-to-production:
 		runs-on: ubuntu-latest
