@@ -22,4 +22,3 @@ jobs:
 				
 			- name: Estagio 5 - Enviar o projeto para o vercel
 				run: vercel deploy --prebuilt -- prod --token=${{ secrets.VERCEL_TOKEN }}
-				
