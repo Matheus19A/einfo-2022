@@ -1,12 +1,12 @@
 name: Deploy para o vercel
-on: 
+on:
 	push:
 		branches:
 			- master
 jobs:
 	Deploy-to-production:
 		runs-on: ubuntu-latest
-		steps: 
+		steps:
 			- uses: actions/checkout@v2
 			- name: Estagio 1
 				run: echo "hello world"
