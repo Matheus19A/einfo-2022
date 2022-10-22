@@ -1,0 +1,25 @@
+name: Deploy para o vercel
+on: 
+	push:
+		branches:
+			- master
+jobs:
+	Deploy-to-production:
+		runs-on: ubuntu-latest
+		steps: 
+			- uses: actions/checkout@v2
+			- name: Estagio 1
+				run: echo "hello world"
+				
+			- name: Estagio 2 - Instala o CLI do vercel
+				run: npm install --global vercel@latest
+				
+			- name: Estagi 3 - Pull Vercel token
+				run: pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+				
+			- name: Estagio 4 - Construir o projeto
+				run: vercel build --prod --token=${{ secrest.VERCEL_TOKEN }}
+				
+			- name: Estagio 5 - Enviar o projeto para o vercel
+				run: vercel deploy --prebuilt -- prod --token=${{ secrets.VERCEL_TOKEN }}
+				
